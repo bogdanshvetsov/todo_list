@@ -1,0 +1,4 @@
+<%=form_tag("tasks/#{value.id}", :remote => true, method: :patch) do %>
+	<%= text_field_tag 'name', value.name, class: "task-rename" %>
+	<%= button_tag "", class: "fa fa-lg fa-check fix-icon-right clr-green btn-task-rename" %>
+<% end %>

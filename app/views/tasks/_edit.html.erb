@@ -1,0 +1,7 @@
+<%=link_to "tasks/edit/#{task.id}", :remote => true do %>
+  <i class="fa fa-lg fa-pencil fix-edit-icons clr-gray"></i>
+<%end%>
+<span class="line-edit clr-gray">|</span>
+<%=link_to "tasks/#{task.id}", :remote => true, method: :delete do%>
+  <i class="fa fa-lg fa-trash fix-edit-icons clr-gray", style="margin-left: 10px;"></i>
+<%end%>

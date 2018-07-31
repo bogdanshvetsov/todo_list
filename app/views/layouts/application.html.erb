@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO Lists</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+  <% if signed_in? %>
+      <%= button_to "Sign out", signout_path, method: "delete", class: "btn btn-warning btn-small"%>
+  <% end %>
+  <div class="container">
+    <div class="head-text text-center">
+      <h2><b>SIMPLE TODO LISTS</b></h2>
+    	<h4>FROM RUBY GARAGE</h4>
+   	</div>
+    <%= yield %>
+    <br><br>
+    <p class="text-center" style="color: #FFFFFF;"> &copy; Ruby Garage</p>
+  </div>
+  </body>
+</html>

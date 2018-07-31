@@ -1,0 +1,20 @@
+<div class="register">
+  <div class="register-head">
+    <b>Sign in</b>
+  </div>
+  <div class="register-form">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.text_field :email, placeholder: "Email" %>
+
+      <%= f.password_field :password, placeholder: "Password" %>
+      <div calss="controls">
+        <%= f.submit "Sign-in", class: "btn btn-default btn-success" %>
+        <span class="text-sign-up">
+          New user?
+          <%= link_to "Sign up now!", signup_path %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<i class="fa fa-calendar fix-icon-left"></i>
+<%= escape_javascript(@project.name) %>
+<%=link_to "ui/destroy/#{value.id}", :remote => true,  method: :delete do %>
+	<i class="fa fa-trash fix-icon-right clr-red"></i>
+<%end%>
+<span class="line">|</span>
+<%=link_to "ui/edit/#{value.id}", :remote => true do %>
+	<i class="fa fa-pencil fix-icon-right clr-green"></i>
+<%end%>

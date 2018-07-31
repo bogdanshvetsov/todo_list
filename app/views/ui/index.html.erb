@@ -1,0 +1,12 @@
+<div id="projects-show">
+	<% @projects.each do |prj| %>
+		<%= render 'ui/project', value: prj, tasks: @tasks %>
+	<% end %>
+</div>
+
+<div class="div-add">
+	<%= button_to "ui/create", :remote => true, class: "btn-add" do %>
+		<i class="fa fa-plus fa-lg" id="icon-plus"></i> 
+		<b>Add TODO List</b>
+	<% end %>
+</div>

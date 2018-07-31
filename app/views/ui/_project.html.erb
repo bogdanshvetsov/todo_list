@@ -1,0 +1,29 @@
+<div class="todo", id="project<%= value.id %>">
+  <div class="todo-project-name" id="change-name<%= value.id %>">
+    <i class="fa fa-calendar fix-icon-left"></i>
+      <%= value.name %>
+      <%=link_to "ui/destroy/#{value.id}", :remote => true,  method: :delete do%>
+        <i class="fa fa-trash fix-icon-right clr-red"></i>
+      <%end%>
+      <span class="line">|</span>
+      <%=link_to "ui/edit/#{value.id}", :remote => true do %>
+        <i class="fa fa-pencil fix-icon-right clr-green"></i>
+      <%end%>
+  </div>
+  <div class="todo-head"> <!--<i class="fa fa-plus fa-2x fix-icon-left" id="icon-plus"></i> иконка плюса-->
+    <div class="input-append">
+      <%= form_for(@task_new, :remote => true) do |f| %>
+        <%= f.hidden_field(:project_id, value: "#{value.id}") %>
+        <%= f.text_field :name, class: "span7", placeholder: "Start typing here to create a task..." %>
+        <%= f.submit "Add Task", class: "btn btn-success" %>
+      <%end%>
+    </div>
+  </div>
+  <div id="project-tasks<%= value.id %>">
+    <% tasks.each do |task| %>
+      <% if task.project_id == value.id %>
+        <%= render('tasks/task', value: value, task: task) %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

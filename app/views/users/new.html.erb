@@ -1,0 +1,25 @@
+<div class="register">
+  <div class="register-head">
+    <b>Sign up</b>
+  </div>
+  <div class="register-form">
+    <%= form_for(@user) do |f| %>
+
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <div calss="controls">
+        <%= f.submit "Sign-up", class: "btn btn-default btn-success" %>
+          <span class="text-sign-up">
+            Have an Account?
+            <%= link_to "Sign in", signin_path %>
+          </span>
+      </div>
+    <%end%>
+  </div>
+</div>

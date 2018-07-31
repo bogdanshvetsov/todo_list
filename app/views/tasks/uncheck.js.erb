@@ -1,0 +1,3 @@
+$("#task-check<%= escape_javascript(params[:id]) %>").html("<%= escape_javascript(render("check", task: @task)) %>")
+$("#task-text<%= escape_javascript(params[:id]) %>").html("<%= escape_javascript(render("name", task: @task)) %>")
+$("#task-edit<%= escape_javascript(params[:id]) %>").html("<%= escape_javascript(render("edit", task: @task)) %>")
