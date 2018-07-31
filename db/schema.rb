@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20151125190701) do
     t.string   "name"
     t.boolean  "status",     default: false
     t.integer  "project_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "user_id"
   end
 
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20151125190701) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
